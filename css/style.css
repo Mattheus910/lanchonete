@@ -1,10 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-}
 
 header {
     padding: 2rem;
@@ -29,16 +23,25 @@ nav input {
     border-radius: 10px;
 }
 
-.dropdown {
-    margin-left: 4rem;
+.filter {
+    margin-left: 2rem;
+    background-color: #d9d9d9;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.filter option {
+    background-color: #d9d9d9;
 }
 
 main {
     width: 100%;
     margin-top: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 .product-container {
@@ -50,8 +53,8 @@ main {
 }
 
 .product-container .img {
-    width: 80%;
-    height: 12rem;
+    width: 13rem;
+    height: 15rem;
     border-radius: 10px;
     background-color: #fff;
     margin: 1rem auto;
@@ -63,6 +66,80 @@ main {
     border-radius: 10px;
 }
 
-.preco {
+.box {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pedir {
+    background-color: #F09000;
+    color: #fff;
+    font-weight: bold;
+    padding:5px 40px;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.pedir:disabled {
+    background-color: #ccc;
+}
+
+.accordion {
+    --bs-accordion-btn-padding-x: 5px !important;
+    --bs-accordion-btn-padding-y: 5px !important;
+}
+
+.ingredientes {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+.cart {
+    position: sticky;
+    bottom: 20px;
+    left: 300px;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: #007e06;
+    color: #fff;
+    display: block;
+}
+
+.cart::after {
+    display: none;
+    content: attr(data-content);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 0px;
+}
+
+.cart.ativo::after {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicial {
+    position: absolute;
+    width: 100vw;
+}
+
+.esconde {
+    display: none;
+}
+
+.aparece {
+    display: block !important;
+}
+
+@media screen and (min-width: 785px) {
+
 }
