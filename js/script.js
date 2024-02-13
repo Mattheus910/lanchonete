@@ -250,7 +250,7 @@ function enviarPedido() {
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
-    const url = `https://api.whatsapp.com/send/?phone=5511973008423&text=${mensagemCodificada}`;
+    const url = `https://api.whatsapp.com/send/?phone=5511999999999&text=${mensagemCodificada}`;
 
     window.open(url, '_blank');
 }
@@ -337,8 +337,6 @@ const filterProducts = (filterValue) => {
             break;
     }
 }
-
-
 
 // checa se existem pedidos no botão do carrinho
 const checkPedidos = () => {
