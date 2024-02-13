@@ -258,6 +258,7 @@ function enviarPedido() {
 // procura os produtos pelo nome
 const getSearchedProducts = (search) => {
     const produtos = restaurante.produto.container;
+    const windowWidth = window.innerWidth;
 
     produtos.forEach((produto) => {
 
@@ -267,7 +268,11 @@ const getSearchedProducts = (search) => {
 
         const nome = nomeElement.innerText.toLowerCase();
 
-        produto.style.display = "block";
+        if (windowWidth <= 765) {
+            produto.style.display = "block";
+        } else {
+            produto.style.display = "flex";
+        }
 
         if (!nome.includes(search.toLowerCase())) {
             produto.style.display = "none";
