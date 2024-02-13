@@ -34,7 +34,7 @@ const restaurante = {
     },
 
     valores: {
-        lanche: 20.00,
+        lanche: 15.00,
         pizza: 25.00,
         hotdog: 10.00,
         suco: 6.00,
@@ -95,7 +95,7 @@ function addPedidoCarrinho(event) {
 
     const btnRemove = document.createElement("button")
     btnRemove.classList.add("remover");
-    btnRemove.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+    btnRemove.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
     </svg>`;
     divQuant.appendChild(btnRemove);
@@ -107,7 +107,7 @@ function addPedidoCarrinho(event) {
 
     const btnAdiciona = document.createElement("button")
     btnAdiciona.classList.add("adicionar");
-    btnAdiciona.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+    btnAdiciona.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
   </svg>`;
     divQuant.appendChild(btnAdiciona);
@@ -166,7 +166,7 @@ function removeProduct(event) {
         }
         pedidos--;
         restaurante.botoes.carrinho.setAttribute("data-content", pedidos);
-        
+
     }
 
     alterPriceDown(event, nameElement);
@@ -297,7 +297,7 @@ const filterProducts = (filterValue) => {
         case "bebida":
             produtos.forEach((produto) => produto.classList.contains("bebida") ? (produto.style.display = "block") : (produto.style.display = "none"));;
             break;
-    
+
         default:
             break;
     }
@@ -313,7 +313,6 @@ const checkPedidos = () => {
         restaurante.botoes.carrinho.style.display = "block"
     }
 }
-
 
 
 
@@ -351,8 +350,9 @@ restaurante.endereco.cep.addEventListener("input", () => {
         .catch(error => console.error('Erro ao buscar CEP:', error));
 });
 
-restaurante.botoes.enviar.addEventListener("click", (e) =>{
+restaurante.botoes.enviar.addEventListener("click", (e) => {
     e.preventDefault();
+
     if (
         restaurante.endereco.logradouro.value &&
         restaurante.endereco.numero.value &&
@@ -361,6 +361,7 @@ restaurante.botoes.enviar.addEventListener("click", (e) =>{
         restaurante.endereco.estado.value &&
         restaurante.endereco.cep.value
     ) {
+
         enviarPedido();
     }
 
@@ -368,7 +369,7 @@ restaurante.botoes.enviar.addEventListener("click", (e) =>{
 
 restaurante.botoes.search.addEventListener("keyup", (e) => {
     const search = e.target.value;
-  
+
     getSearchedProducts(search);
 });
 
