@@ -2,8 +2,8 @@
 
 Bem-vindo ao Sistema de Pedido, uma aplicação web para facilitar a realização de pedidos em uma lanchonete fictícia.
 
-![Tela Inicial]()
-![Carrinho de Compras](link_para_a_imagem)
+![Tela Inicial](./img/telaInicial.png)
+![Carrinho de Compras](./img/carrinho.png)
 
 ## Sobre o Projeto
 
