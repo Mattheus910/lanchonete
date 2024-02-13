@@ -277,32 +277,68 @@ const getSearchedProducts = (search) => {
 
 // filtra os produtos
 const filterProducts = (filterValue) => {
-
     const produtos = restaurante.produto.container;
+    const windowWidth = window.innerWidth;
 
     switch (filterValue) {
-
         case "tudo":
-            produtos.forEach((produto) => produto.style.display = "block");
+            produtos.forEach((produto) => {
+                if (windowWidth <= 765) {
+                    produto.style.display = "block";
+                } else {
+                    produto.style.display = "flex";
+                }
+            });
             break;
 
         case "salgado":
-            produtos.forEach((produto) => produto.classList.contains("salgado") ? (produto.style.display = "block") : (produto.style.display = "none"));
+            produtos.forEach((produto) => {
+                if (produto.classList.contains("salgado")) {
+                    if (windowWidth <= 765) {
+                        produto.style.display = "block";
+                    } else {
+                        produto.style.display = "flex";
+                    }
+                } else {
+                    produto.style.display = "none";
+                }
+            });
             break;
 
         case "doce":
-            produtos.forEach((produto) => produto.classList.contains("doce") ? (produto.style.display = "block") : (produto.style.display = "none"));;
+            produtos.forEach((produto) => {
+                if (produto.classList.contains("doce")) {
+                    if (windowWidth <= 765) {
+                        produto.style.display = "block";
+                    } else {
+                        produto.style.display = "flex";
+                    }
+                } else {
+                    produto.style.display = "none";
+                }
+            });
             break;
 
         case "bebida":
-            produtos.forEach((produto) => produto.classList.contains("bebida") ? (produto.style.display = "block") : (produto.style.display = "none"));;
+            produtos.forEach((produto) => {
+                if (produto.classList.contains("bebida")) {
+                    if (windowWidth <= 765) {
+                        produto.style.display = "block";
+                    } else {
+                        produto.style.display = "flex";
+                    }
+                } else {
+                    produto.style.display = "none";
+                }
+            });
             break;
 
         default:
             break;
     }
-
 }
+
+
 
 // checa se existem pedidos no botão do carrinho
 const checkPedidos = () => {

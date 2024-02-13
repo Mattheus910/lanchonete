@@ -6,6 +6,7 @@ header {
 header h1 {
     font-size: 3rem;
 }
+
 header span {
     color: orange;
 }
@@ -109,7 +110,7 @@ li {
 .cart {
     position: sticky;
     bottom: 30px;
-    left: 90%;
+    left: 80%;
     padding: 1rem;
     border-radius: 50%;
     background-color: #007e06;
